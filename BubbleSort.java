@@ -31,6 +31,9 @@ public class BubbleSort {
 //        return nums;
 
         // 鸡尾酒排序
+        // 先对数组从左到右进行冒泡排序（升序），则最大的元素去到最右端
+        // 再对数组从右到左进行冒泡排序（降序），则最小的元素去到最左端
+        // 以此类推，依次改变冒泡的方向，并不断缩小未排序元素的范围，直到最后一个元素结束
         int i, left = 0, right = nums.length - 1;
         while (left < right) {
             for (i = left; i < right; i++) {
@@ -40,8 +43,8 @@ public class BubbleSort {
             }
             right--;
             for (i = right; i > left; i--) {
-                if (nums[i] > nums[i + 1]) {
-                    swap(nums, i, i + 1);
+                if (nums[i] < nums[i-1]) {
+                    swap(nums, i, i - 1);
                 }
             }
             left++;
