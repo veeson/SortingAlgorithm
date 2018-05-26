@@ -43,7 +43,7 @@ public class BubbleSort {
             }
             right--;
             for (i = right; i > left; i--) {
-                if (nums[i] < nums[i-1]) {
+                if (nums[i] < nums[i - 1]) {
                     swap(nums, i, i - 1);
                 }
             }
